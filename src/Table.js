@@ -22,11 +22,14 @@ export const Table = () => {
           "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
         );
 
-        if (res.ok) {
+        if (!res.ok) {
+          throw new Error("Failed");
+        } else {
           const data = await res.json();
           console.log(data);
           setData(data);
           setPages(Math.ceil(data.length / 10));
+          setCurrentData(data.slice(0, 10));
         }
       } catch (error) {
         alert("failed to fetch data");
