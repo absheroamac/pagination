@@ -59,21 +59,25 @@ export const Table = () => {
   return (
     <div className={styles.container}>
       <table className={styles.table}>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-        </tr>
-        {currentData.length !== 0 &&
-          currentData.map((item) => (
-            <tr>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.email}</td>
-              <td>{item.role}</td>
-            </tr>
-          ))}
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentData.length !== 0 &&
+            currentData.map((item) => (
+              <tr>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.role}</td>
+              </tr>
+            ))}
+        </tbody>
       </table>
 
       <div className={styles.buttonContainer}>
