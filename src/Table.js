@@ -29,6 +29,7 @@ export const Table = () => {
           setPages(Math.ceil(data.length / 10));
         }
       } catch (error) {
+        alert("failed to fetch data");
         console.error("failed to fetch data");
       }
     };
